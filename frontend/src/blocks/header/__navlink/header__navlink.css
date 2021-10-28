@@ -1,0 +1,26 @@
+.header__navlink {
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.header__navlink:hover {
+    transition: opacity .4s linear;
+    opacity: .6;
+}
+
+@media screen and (max-width: 880px) {
+    .header__navlink {
+        margin-right: 27px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .header__navlink {
+        margin-right: 30px;
+        font-size: 14px;
+        line-height: 1.2; 
+    }
+}

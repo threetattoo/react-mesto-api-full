@@ -1,0 +1,10 @@
+.header__nav_hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+@media screen and (min-width: 525px) {
+    .header__nav_hidden {
+        visibility: visible;
+    }
+}

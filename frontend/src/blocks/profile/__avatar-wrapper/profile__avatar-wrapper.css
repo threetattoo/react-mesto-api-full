@@ -1,0 +1,12 @@
+.profile__avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
+}
+
+.profile__avatar-wrapper:hover .profile__avatar {
+    opacity: 0.4;
+    transition: 0.4s ease;
+}

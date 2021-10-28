@@ -1,0 +1,12 @@
+.elements__item {
+    position: relative;
+    max-width: 282px;
+    min-width: 282px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr min-content;
+    grid-template-areas: "image image" "caption likecontainer";
+}

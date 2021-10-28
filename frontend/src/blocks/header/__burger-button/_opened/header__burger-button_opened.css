@@ -1,0 +1,5 @@
+.header__burger-button_opened {
+    background: url(../../../../images/Header-menu-opened.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,14 @@
+.elements__title {
+    width: 80%;
+    margin: 0;
+    padding: 25px 0 29px 21px;
+    font-size: 24px;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 900;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    grid-area: caption;
+}

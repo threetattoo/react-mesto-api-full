@@ -1,0 +1,18 @@
+.sign__input {
+    width: 100%;
+    padding: 0 0 13px;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;;
+    color: #CCCCCC;
+    background-color: #000000;
+    font-size: 14px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 320px) {
+    .sign__title {
+        margin-top: 40px;
+    }
+}

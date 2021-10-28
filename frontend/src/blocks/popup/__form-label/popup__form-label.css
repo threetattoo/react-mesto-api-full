@@ -1,0 +1,22 @@
+.popup__form-label {
+    height: 28px;
+    margin: 0 0 29px;
+    position: relative;
+}
+
+.popup__form-label:first-child {
+    margin-top: 54px;
+}
+
+.popup__form-label:last-child {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 540px) {
+    .popup__form-label:first-child {
+        margin-top: 75px;
+    }
+    .popup__form-label:last-child {
+        margin-bottom: 7px;
+    }
+}

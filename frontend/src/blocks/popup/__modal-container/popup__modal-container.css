@@ -1,0 +1,17 @@
+.popup__modal-container {
+    width: 430px;
+    position: relative;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 540px) {
+    .popup__modal-container {
+        width: 280px;
+        padding-top: 50px;
+    }
+}

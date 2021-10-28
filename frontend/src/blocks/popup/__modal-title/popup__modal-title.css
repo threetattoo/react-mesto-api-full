@@ -1,0 +1,20 @@
+.popup__modal-title {
+    width: 358px;
+    margin-top: 32px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #000000;
+}
+
+@media screen and (max-width: 540px) {
+    .popup__modal-title {
+        width: 244px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+}

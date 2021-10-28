@@ -1,0 +1,21 @@
+.header__burger-button {
+    width: 24px;
+    height: 24px;
+    background: url(../../../images/Header-menu-closed.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: unset;
+    cursor: pointer;
+    transition: opacity .4s ease;
+    margin-right: 30px;
+}
+
+.header__burger-button:hover {
+    opacity: .6;
+}
+
+@media screen and (min-width: 525px) {
+    .header__burger-button {
+      visibility: hidden;
+    }
+}

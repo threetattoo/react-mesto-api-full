@@ -1,0 +1,12 @@
+.sign__login-link {
+    text-decoration: none;
+}
+
+.sign__login-link:visited {
+    color: #ffffff;
+}
+
+.sign__login-link:hover {
+    transition: opacity .4s linear;
+    opacity: .6;
+}
