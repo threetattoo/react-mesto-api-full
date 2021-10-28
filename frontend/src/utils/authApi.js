@@ -9,8 +9,8 @@ class authApi {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                password: password,
-                email: email
+                email: email,
+                password: password
             })
         })
         .then(response => this._checkApiRequest(response));
@@ -21,8 +21,8 @@ class authApi {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                password: password,
-                email: email
+                email: email,
+                password: password
             })
         })
         .then(response => this._checkApiRequest(response));
