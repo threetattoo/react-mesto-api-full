@@ -34,6 +34,7 @@ function App () {
     isInfoTooltipSuccessfully,
     setIsInfoTooltipSuccessfully,
   ] = React.useState (true);
+  const [token, setToken] = React.useState('');
   const history = useHistory ();
 
   function handleEditProfileClick () {
@@ -110,23 +111,25 @@ function App () {
   }
 
   React.useEffect (() => {
-    Promise.all ([api.getUserInfo (), api.getInitialCards ()])
+    Promise.all ([api.getUserInfo (token), api.getInitialCards (token)])
       .then (([userInfo, initialCards]) => {
         setCurrentUser (userInfo);
         setCards (initialCards);
       })
       .catch (error => console.log (error));
-  }, []);
+  }, [loggedIn]);
 
   //проверяем валидность токена пользователя
   React.useEffect (
     () => {
-      if (localStorage.getItem ('token')) {
-        const token = localStorage.getItem ('token');
+      const token = localStorage.getItem ('token');
+      if (token) {
+        setToken(token);
         authapi
           .getUserData (token)
           .then (response => {
             if (response) {
+              console.log(response);
               setUserInfo ({email: response.data.email});
               setLoggedIn (true);
               history.push ('/');
@@ -148,6 +151,7 @@ function App () {
       .signin (email, password)
       .then (response => {
         if (response.token) {
+          setToken(response.token);
           localStorage.setItem ('token', response.token);
           setUserInfo ({email: email});
           setLoggedIn (true);
@@ -167,7 +171,7 @@ function App () {
       .signup (email, password)
       .then (response => {
         localStorage.setItem ('token', response.token);
-        setUserInfo (response.data);
+        setUserInfo ({email: email});
         setIsInfoTooltipSuccessfully (true);
         history.push ('/sign-in');
       })
