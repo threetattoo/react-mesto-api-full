@@ -47,7 +47,7 @@ function App () {
           .getUserData (token)
           .then (response => {
             if (response) {
-              setUserInfo ({email: response.data.email});
+              setUserInfo ({email: response.email});
               setLoggedIn (true);
               history.push ('/');
             }
@@ -114,10 +114,10 @@ function App () {
 
   //функция выхода пользователя из аккаунта
   function handleLogout() {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
     setLoggedIn(false);
     setUserInfo({ email: "" });
-    history.push("/sign-in");
+    history.push('/sign-in');
   }
 
 
@@ -146,7 +146,7 @@ function App () {
   }
 
   function handleCardLike (card, isLiked) {
-    (isLiked ? api.dislikeCard (card._id) : api.likeCard (card._id))
+    (isLiked ? api.dislikeCard (card._id, token) : api.likeCard (card._id, token))
       .then (newCard => {
         setCards (cards =>
           cards.map (item => (item._id === card._id ? newCard : item))
@@ -157,16 +157,16 @@ function App () {
 
   function handleCardDelete (card) {
     api
-      .deleteCard (card._id)
+      .deleteCard (card._id, token)
       .then (() => {
         setCards (cards => cards.filter (item => item._id !== card._id));
       })
       .catch (error => console.log (error));
   }
 
-  function handleUpdateUser (currentUser) {
+  function handleUpdateUser (data) {
     api
-      .changeUserInfo (currentUser.name, currentUser.about)
+      .changeUserInfo (data, token)
       .then (response => {
         setCurrentUser (response);
         closeAllPopups ();
@@ -174,9 +174,9 @@ function App () {
       .catch (error => console.log (error));
   }
 
-  function handleUpdateAvatar (currentUser) {
+  function handleUpdateAvatar (data) {
     api
-      .changeUserAvatar (currentUser.avatar)
+      .changeUserAvatar (data, token)
       .then (response => {
         setCurrentUser (response);
         closeAllPopups ();
@@ -184,9 +184,9 @@ function App () {
       .catch (error => console.log (error));
   }
 
-  function handleAddPlaceSubmit (card) {
+  function handleAddPlaceSubmit (data) {
     api
-      .addNewCard (card.name, card.link)
+      .addNewCard (data, token)
       .then (newCard => {
         setCards ([newCard, ...cards]);
         closeAllPopups ();
