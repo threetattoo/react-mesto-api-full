@@ -149,7 +149,7 @@ function App () {
     (isLiked ? api.dislikeCard (card._id, token) : api.likeCard (card._id, token))
       .then (newCard => {
         setCards (cards =>
-          cards.map (item => (item._id === card._id ? newCard : item))
+          cards.map ((item) => (item._id === card._id ? newCard : item))
         );
       })
       .catch (error => console.log (error));
