@@ -120,7 +120,7 @@ const updateAvatar = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'CastError' || err.name === 'ValidationError') {
-        throw new NotFoundError('Переданы некорректные данные');
+        throw new IncorrectDataError('Переданы некорректные данные');
       } else {
         next(err);
       }
